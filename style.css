@@ -1,0 +1,586 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body {
+    background-color: #ddd;
+}
+.container{
+    max-width: 90%;
+    background-color: #fff;
+    margin: 0 5.5%;
+}
+.h-title {
+    height: 100px;
+    border-top: 5px solid #0E36CA;
+    position: relative;
+
+}
+.h-title .h-logo {
+    width: 300px;
+    position: absolute;/*absoluteを指定すると親要素の高さが0になる*/
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+}
+.h-nav {
+    border-top: 1px solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+    vertical-align: bottom;
+    margin-bottom: 0;
+    height: 65px;
+}
+.h-menu {
+    letter-spacing: -.4em;    
+}
+.h-list{
+    display: inline-block;
+    width: calc(100%/6);
+    position: relative;
+    letter-spacing: normal;
+    height: 64px;/*absoluteで高さが0になったから*/
+    border-right: 1px solid #d2d2d2;
+    box-sizing: border-box;
+/*    vertical-align: bottom;隙間なくす*/
+}
+.h-nav ul li:last-child {
+    border-right: none;
+}
+.h-list:hover .h-l-top{
+    color: #0E36CA;
+}
+.h-list:hover {
+    background-color: #e6edfa;
+}
+.h-list:hover .h-l-box:before {
+    content: "";
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    background-color: #0E36CA;
+    left: 4Px;
+}
+.h-list a {
+    text-decoration: none;
+}
+.h-l-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+}
+.h-l-top {
+    font-size: 15px;
+    color: #666;
+    margin: 4px;
+    font-weight: bolder;
+}
+.h-l-bottom {
+    font-size: 10px;
+    color: #d3d3d3;
+    text-align: center;
+}
+.active{
+    background-color: #e6edfa;
+}
+.active .h-l-box{
+    border-left: 3px solid #0E36CA;
+}
+.active .h-l-top{
+    color: #0E36CA;
+}
+.h-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.contents {
+    padding: 20px;
+    font-size: 0; /*変な隙間なくしてくれる。でもそれぞれの親要素にfont size指定する*/
+}
+.contents:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.main {
+    width: 74%;
+    float: left;
+}
+.m-section {
+    padding-bottom: 50px;
+}
+.m-section h2 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 27px;
+    border-radius: 4px;
+    padding: 10px 0 10px 20px;
+    margin: 0 15px 20px;
+    background-image: linear-gradient(to bottom, #1140EE 0%, #0F37CB 100%);
+    box-shadow: 2px 2px 5px rgb(218,218,218);
+}
+.m-section h2::first-letter {
+    border-left: 3px solid #8e9eef;
+    padding-left: 16px;
+}
+.m-section h3 {
+    color: #666;
+    font-size: 17px;
+    font-weight: normal;
+    border: 1px solid #ccc;
+    line-height: 25px;
+    border-radius: 3px;
+    padding:10px 0 10px 20px;
+    margin: 0 15px 10px;
+    background-image: linear-gradient(to bottom, #fff 0%, #eee 100%);
+}
+.m-section p {
+    color: #666;
+    font-size: 15px;
+    line-height: 2em;
+    margin: 0 35px;
+}
+.m-section a {
+    color: #666;
+}
+.m-point {
+    color: red;
+    font-weight: bolder;
+    margin-top: 10px;
+}
+.point {
+    color: red;
+}
+.back-gray {
+    color: #333;
+    background-color: #bbb;
+    border-radius: 4px;
+    padding: 5px;
+}
+.m-section dl {
+    margin: 20px 35px;
+    line-height: 2em;
+    font-size: 15px;
+}
+.m-section dl dt {
+    color: #0E36CA;
+    font-size: 15px;
+    float: left;
+    margin-right: 40px;
+    border-bottom: 1px solid #ccc ;
+    padding: 3px;
+}
+.m-section dl dd {
+    color: #666;
+    font-size: 15px;
+    border-bottom: 1px solid #ccc ;
+    padding: 3px;
+}
+.dd-point {
+    color: #fff;
+    font-size: 11px;
+    background-color: red;
+    border-radius: 3px;
+    padding: 2px 5px;
+}
+.past-log {
+    text-align: right;
+    color: #666;
+    font-size: 15px;
+    
+}
+.past-log a {
+    color: #666;
+}
+table {    
+    margin: 0 15px 15px;
+    border-collapse: collapse;
+    width: 96.5%;
+}
+tr {
+    height: 50px;
+    color: #666;
+    padding: 10px;
+}
+th, td {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc ;
+}
+th{
+    width: 25%;
+    font-weight: normal;
+    text-align: center;
+}
+td {
+    text-align: left;
+}
+table a {
+    color: #666;
+    font-weight: normal;
+}
+table a:hover {
+    color: #0E36CA;
+    font-weight: normal;
+    text-decoration: none;
+}
+.first-topics {
+    text-align: left;
+}
+.contact-table {
+    margin: 0 15px;
+    border-collapse: collapse;
+}
+.contact-table th {
+    width: 25%;
+    font-weight: normal;
+    text-align: center;
+}
+.c-topic1 {
+    height: 40px;
+}
+.c-topic2 {
+    height: 200px;
+}
+input {
+    width: 360px;
+}
+textarea {
+    width: 600px;
+    height: 150px;
+}
+.contact-submit {
+    margin: 20px 400px;
+    height: 40px;
+    padding: 5px;
+    width: 120px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-image: linear-gradient(to bottom, #fff 0%, #eee 100%);
+}
+.explain1 {
+    color: #666;
+    font-size: 15px;
+    line-height: 2;
+    margin: 20px 30px;
+    height: auto;
+    padding: 20px;
+    border: 1px solid #ccc ;
+    background-image: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    box-shadow: 3px 3px 4px rgb(218,218,218), -1px -0.5px 2px #DADADA;  
+    overflow: hidden; 
+
+}
+.explain1:hover {
+    color: #0E36CA;
+    background-image: none;
+    background-color: #fff;
+    transition: 0.3s;
+}
+.explain1:hover .arrow-click {
+    background-color: #111;
+}
+.explain2 {
+    color: #666;
+    font-size: 15px;
+    line-height: 2;
+    margin: 20px 30px;
+    height: auto;
+    padding: 20px;
+    border: 1px solid #ccc ;
+    background-image: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    box-shadow: 3px 3px 4px rgb(218,218,218), -1px -0.5px 2px #DADADA;   
+
+}
+.explain2:hover {
+    color: #0E36CA;
+    background-image: none;
+    background-color: #fff;
+    transition: 0.3s;
+}
+.explain2:hover .arrow-click {
+    background-color: #111;
+}
+.explain3 {
+    color: #666;
+    font-size: 15px;
+    line-height: 2;
+    margin: 20px 30px;
+    height: auto;
+    padding: 20px;
+    border: 1px solid #ccc ;
+    background-image: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    box-shadow: 3px 3px 4px rgb(218,218,218), -1px -0.5px 2px #DADADA;   
+   
+}
+.explain3:hover {
+    color: #0E36CA;
+    background-image: none;
+    background-color: #fff;
+    transition: 0.3s;
+}
+.explain3:hover .arrow-click {
+    background-color: #111;
+}
+.explain4 {
+    color: #666;
+    font-size: 15px;
+    line-height: 2;
+    margin: 20px 30px;
+    height: auto;
+    padding: 20px;
+    border: 1px solid #ccc ;
+    background-image: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    box-shadow: 3px 3px 4px rgb(218,218,218), -1px -0.5px 2px #DADADA;   
+
+}
+.service-img {
+    width: 240px;
+    height: 165px;
+    float: left;
+    margin-right: 10px;
+    
+}
+.font-blue {
+    color: #0E36CA;
+    font-size: 18px ;
+    
+}
+.arrow-click {
+    color: #fff;
+    float: right;
+    background-color: #777;
+    border-radius: 3px;
+    padding: 1px 8px;
+}
+.side {
+    width: 26%;
+    float: right;
+    padding: 0 1.7%;
+}
+.s-framebox {
+    border: 1px solid #d2d2d2;
+    background-image: linear-gradient(to bottom, #fff 0%, #eaeaea 100%);
+    padding: 5px 5px 10px 5px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.s-box {
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 0;
+}
+.s-h4, .s-box-h4 {
+    color: #666;
+    font-size: 15px;
+    background-color: #eee;
+    border-top: 5px solid #0E36CA;
+    border-bottom: 1px solid #d2d2d2;
+    padding: 18px 10px;
+}
+.s-h4 {
+    margin: 4px;
+}
+.s-box-h4 {
+    margin: 0;
+}
+.s-menu {
+    list-style: none;
+}
+.s-box {
+    list-style: none;
+}
+.s-list {
+    margin: 0 4px;
+    padding: 7px;
+    /*vertical-align: bottom;*/
+    border-bottom: 1px solid #ccc;
+}
+.s-box-list {
+    margin: 0;
+    padding: 7px;
+    border-bottom: 1px solid #ccc;
+}
+.s-list a, .s-box-list a {
+    color: #666;
+    text-decoration: none;
+}
+.s-l-menu {
+    font-size: 15px;
+    color: #666;
+}
+.s-l-title {
+    color: #0E36CA;
+    font-size: 11px;
+}
+.s-l-description {
+    font-size: 11px;
+}
+.s-l-img {
+    width: 50px;
+    height: 35px;
+    float: left;
+    margin: 0 5px 7px 4px;
+}
+.s-company-title {
+    color: #666;
+    font-size: 15px;
+    font-weight: bolder;
+    text-align: center;
+}
+.s-company-info {
+    color: #666;
+    font-size: 11px;
+    text-align: center;
+}
+
+.footer {
+    color: #fff;
+    font-size: 13px;
+    height: 50px;
+    background-color: #0E36CA;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#nav-contents {
+    position: absolute;
+    top: 120px;
+    z-index: 100;
+    width: 100%;
+    height: auto;
+    background: #000;
+    transition: 0.3;
+    opacity: 0;
+    pointer-events: none;
+}
+.nav-invisible {       /*checkbox*/
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media screen and (max-width:1000px ) {
+    .container {
+        max-width: 100%;
+        margin: 0;
+    }
+    .contents {
+        padding: 2%;
+    }
+    .main {
+        width:98%;
+        float: none;
+        margin: 0 auto;
+    }
+    .side {
+        width:98%;
+        float: none;
+        margin: 0 auto;
+    }
+    .h-nav {
+        display: none;
+    }
+    /*チェックボックスと紐づけされてる。ハンバーガーメニュー全体*/
+    label {
+        display: inline-block;
+       /* position: absolute;　/*絶対値*/
+        height: 24px;  
+        width: 30px;    
+        right: 30px;
+        top: 36px;        
+        cursor: pointer;
+    }
+    /*チェックボックスと紐づけされてるラベルのID*/
+   /* #nav-open {
+        display: inline-block;
+        height: 24px;
+        width: 30px;
+        /*border: 2px;
+        background-color: pink;
+    }
+     /*ハンバーガーメニューの横棒*/
+    #nav-open span,  #nav-open span:before,  #nav-open span:after {
+        position: absolute;
+        height: 3px;
+        width: 30px;
+        background: #666;
+        content: "";
+    }
+    #nav-open span {
+        top: 38px;
+        right: 30px;
+    }
+    #nav-open span:before {
+        bottom: -12px;
+    }
+    #nav-open span:after {
+        bottom: -24px;
+    }
+    #nav-input:checked ~ #nav-contents {
+        opacity: .8;
+    }    
+    /*ul class*/
+    /*.sp-menu {
+        position: relative;　
+    }              
+    /*相対位置*/
+
+    /* navタグの外側。nav全体*/
+    #nav-contents {
+        background: #000;
+       /* opacity: 0.8;これ入れなかったら解決した！*/
+        position: absolute;
+        top: 95px;
+        z-index: 100;
+        width: 100%;
+        height: auto;
+        transition: 0.3;
+        pointer-events: auto;
+    }
+    /*.nav-invisible {
+        position: absolute;
+        left: -50vw;
+    }*/
+    .sp-menu-l {
+        list-style: none;
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #fff;
+        padding: 20px;
+        text-align: left;
+        line-height: 2;
+    }
+    .sp-menu-l a {
+        text-decoration: none;
+        color: white;
+    }
+    .sp-menu-top {
+        font-size: 20px;  
+    }
+    .sp-menu-bottom {
+        font-size: 13px;
+    }*/
+    
+    dt {
+        border: none;
+    }
+    .s-list {
+        border-bottom: 1px solid #ccc; 
+        
+    }
+    .s-l-img {
+        width: 85px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 670px ) {
+
+}
